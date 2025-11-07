@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sakthivel The Tile Contractor — Luxury Real Work</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b0c; --card:#0f0f11; --muted:#bfb8ad; --gold:#c9a84a; --white:#f6f5f2;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Poppins',sans-serif;color:var(--white);background:linear-gradient(180deg,#060606,#0d0d0e);-webkit-font-smoothing:antialiased}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;background:rgba(0,0,0,0.25);position:sticky;top:0;backdrop-filter:blur(6px);z-index:10;border-bottom:1px solid rgba(255,255,255,0.03)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{width:56px;height:56px;border-radius:8px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.03)}
+.brand{font-weight:700;font-size:18px;color:var(--white);letter-spacing:0.6px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+.hero{padding:64px 20px;text-align:center;background-image:linear-gradient(rgba(6,6,6,0.6),rgba(6,6,6,0.65)),url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1600&auto=format&fit=crop');background-size:cover;background-position:center}
+.hero h1{font-size:36px;margin:0;color:var(--white);letter-spacing:0.4px}
+.card > h3 {
+  color: #ffcc80 !important;
+}
+
+.hero p{color:var(--muted);max-width:900px;margin:12px auto 0;font-size:16px}
+
+.container{max-width:1100px;margin:28px auto;padding:0 18px}
+
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;margin-bottom:18px;box-shadow:0 10px 30px rgba(0,0,0,0.6);border:1px solid rgba(201,168,74,0.06)}
+.owner{
+  display:flex;
+  gap:18px;
+  align-items:flex-start; /* aligns photo with top of text */
+  justify-content:flex-start;
+}
+
+.owner-photo{
+  width:120px;
+  height:120px;
+  border-radius:10px;
+  object-fit:cover;
+  background:#222;
+  flex-shrink:0;
+  margin-top:6px;
+}
+
+.owner-info h2{margin:0;color:var(--gold);letter-spacing:0.6px}
+.owner-info p{margin:6px 0;color:var(--muted);font-size:15px}
+
+.owner-info ul {
+  list-style: none;
+  margin: 10px 0 0 18px;
+  padding: 0;
+}
+
+.owner-info li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 6px;
+}
+
+.owner-info li::before {
+  content: "◆"; /* diamond symbol */
+  color: #ffcc80; /* soft gold-yellow diamond */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:12px}
+.service{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:12px;border-radius:12px;display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center;border:1px solid rgba(255,255,255,0.02)}
+.service img{width:100%;height:180px;object-fit:cover;border-radius:8px;flex-shrink:0}
+.service h4{margin:0;color:var(--white);font-size:16px}
+.service small{color:var(--muted);display:block;margin-top:6px}
+.service .price{margin-top:6px;color:var(--gold);font-weight:700;font-size:16px}
+.assurance p{color:var(--muted);line-height:1.6}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.gallery img{width:100%;height:200px;object-fit:cover;border-radius:8px;transition:transform .35s ease}
+.gallery img:hover{transform:scale(1.02)}
+.cta{background:linear-gradient(90deg,#0f0f10,#141414);border-radius:12px;padding:18px;text-align:center;margin:18px 0;border:1px solid rgba(201,168,74,0.06)}
+@media (max-width:900px){.services-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.owner{flex-direction:column;align-items:flex-start}}
+.bottom-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;display:flex;gap:12px;z-index:20}
+.btn{background:var(--gold);color:#0b0b0b;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none;box-shadow:0 8px 18px rgba(201,168,74,0.18)}
+.btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white);padding:12px 16px}
+.footer{text-align:center;color:var(--muted);margin:36px 0 120px}
+.header-right{display:flex;align-items:center;gap:12px}
+.small-note{color:var(--muted);font-size:13px;margin-top:6px}
+
+
+
+/* --- Round dots for specific list items in Owner and Why Choose Us sections --- */
+
+/* For owner section - change to round dots */
+.owner-info ul {
+  list-style: none;
+  margin: 10px 0 0 18px;
+  padding: 0;
+}
+
+.owner-info li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 6px;
+}
+
+.owner-info li::before {
+  content: "•";              /* round dot */
+  color: #ffcc80;            /* soft gold-yellow */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+
+
+/* For Why Choose Us section - also round dots */
+.assurance li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 6px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.assurance li::before {
+  content: "•";              /* round dot symbol */
+  color: #ffcc80;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Fixed diamond bullets for Why Choose Us section (only gold diamond visible) */
+.why-points {
+  list-style: none;         /* remove default white dots */
+  margin: 10px 0 0 20px;
+  padding: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.why-points li {
+  position: relative;
+  padding-left: 22px;       /* space for diamond */
+  margin-bottom: 6px;
+}
+
+.why-points li::before {
+  content: "◆";             /* diamond bullet */
+  color: #ffdd75;           /* light gold-yellow color */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* FINAL FIX — GOLD COLOR for both Why Choose Us and Transform phrases */
+.why-tagline,
+.cta-line {
+  text-align: center;
+  color: #ffcc80 !important;     /* GOLD COLOR — forces override */
+  font-family: "Playfair Display", serif;  /* Elegant serif */
+  font-weight: 700;              /* Bold */
+  font-style: italic;            /* Stylish italic */
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  opacity: 0;                    /* Hidden initially */
+  transform: translateY(25px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.why-tagline.visible,
+.cta-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width:600px){
+  .hero h1{font-size:26px}
+  .hero p{font-size:14px}
+  .brand{font-size:16px}
+  .service img{height:140px}
+  .gallery img{height:140px}
+}
+@media (orientation:landscape) and (max-height:500px){
+  body{font-size:90%}
+  .hero{padding:40px 10px}
+}
+
+
+
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">
+      <img src="images/logo3.jpg" alt="logo">
+      <div>
+        <div class="brand">SAKTHIVEL THE TILE CONTRACTOR</div>
+        <div class="small-note">Bangalore • Premium Tiles, Stones, Granites & Marble Works</div>
+      </div>
+    </div>
+    <div class="header-right nav">
+      <nav>
+  <a href="#home">Home</a>
+  <a href="#owner">Owner</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+    </div>
+  </div>
+
+  <section id="home" class="hero" role="banner">
+    <h1>Transform Your Home with Precision & Luxury Finishes</h1>
+    <p>Expert installation of vitrified tiles, ceramic, stones, marble and granite across Bangalore. We deliver polished joints, level surfaces and long-lasting beauty — finished to perfection.</p>
+  </section>
+
+  <div class="container">
+
+
+<style>
+      
+  /* Owner section yellow bullet points - moved one space further right */
+.owner-points {
+  list-style: none;
+  padding-left: 26px;   /* was 22px — moved slightly right */
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.owner-points li {
+  position: relative;
+  padding-left: 38px;   /* was 34px — moved slightly right */
+  margin-bottom: 8px;
+}
+
+.owner-points li::before {
+  content: "•";
+  color: #ffcc80;       /* light yellow dot */
+  position: absolute;
+  left: 16px;           /* was 12px — dot moved one space right */
+  top: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+/* White dot before last 3 paragraphs in Owner section */
+.owner-info p.dot {
+  position: relative;
+  padding-left: 10px;      /* spacing for dot */
+  margin-bottom: 10px;
+  line-height: 1.8;
+  color: #e8e8e8;          /* same white tone as other paras */
+  font-size: 16.5px;
+  font-weight: 400;
+}
+
+.owner-info p.dot::before {
+  content: "•";
+  color: #ffffff;          /* white bullet */
+  position: absolute;
+  left: -10px;             /* aligns dot to left neatly */
+  top: 0;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+
+/* --- OWNER SECTION: Uniform font style for all content --- */
+.owner-info p,
+.owner-info li,
+.owner-info a {
+  color: #e8e8e8;           /* soft white text color for all text */
+  font-size: 16.5px;        /* same as first two intro paragraphs */
+  line-height: 1.8;
+  font-weight: 400;         /* clean, readable look */
+}
+
+/* Keep yellow dots and color for the bullet points */
+.owner-points li::before {
+  content: "•";
+  color: #ffcc80;           /* retain light yellow dot */
+  position: absolute;
+  left: 16px;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Keep phone and email in light yellow highlight */
+.owner-info a {
+  color: #ffdd75;
+  text-decoration: none;
+}
+
+
+
+/* Owner section first two intro paragraphs - same style & larger font */
+.owner-info p:first-of-type,
+.owner-info p:nth-of-type(2) {
+  color: var(--muted);
+  font-size: 16.5px;     /* slightly larger */
+  line-height: 1.8;
+  font-weight: 400;      /* normal weight */
+  margin-bottom: 12px;
+}
+
+.owner-info p.contact-line {
+  color: #e8e8e8;
+  font-size: 16.5px;
+  font-weight: 400;
+  line-height: 1.8;
+  padding-left: 10px;
+  margin-top: 8px;
+}
+
+.owner-info p.contact-line a {
+  color: #ffdd75;
+  text-decoration: none;
+}
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Footer developer credit at bottom of page */
+.developer-credit {
+  width: 100%;
+  text-align: right;
+  padding: 15px 25px;
+  background: transparent;
+  color: #e8e8e8;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  position: relative;
+}
+
+.developer-credit .dev-name {
+  color: #ffcc80;         /* soft gold */
+  font-weight: 700;       /* bold */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+.footer .dev-line {
+  margin-top: 0;
+  padding-right: 18px;      /* spacing from the page edge */
+  text-align: right;        /* align text to the right */
+  font-family: "Poppins", sans-serif;
+  color: #e8e8e8;
+  line-height: 1.2;
+}
+
+
+/* move 'Developed by' slightly left relative to the fully-right name */
+.footer .dev-line .dev-by {
+  display: block;
+  text-align: right;
+  transform: translateX(-8px);   /* move left by ~8px (one small space) */
+  color: #e8e8e8;
+  font-size: 14.5px;
+}
+
+/* name stays fully right and styled */
+.footer .dev-line .dev-name {
+  display: block;
+  text-align: right;       /* flush right */
+  color: #ffcc80;          /* gold */
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+
+.footer {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+
+
+
+</style>
+
+
+  
+  
+<!-- Owner Section -->
+<div id="owner" class="card owner" aria-label="Owner">
+
+  <div style="text-align:center;">
+    <h3 style="color:#ffcc80;margin-bottom:8px;font-size:22px;font-weight:700;letter-spacing:0.5px;">Owner</h3>
+    <img class="owner-photo" src="images/owner-photo.jpg" alt="Owner Photo" style="width:150px;height:150px;border-radius:50%;object-fit:cover;box-shadow:0 0 8px rgba(255,255,255,0.2);">
+  </div>
+
+  <div class="owner-info" style="margin-top:12px;">
+    <h2>SAKTHIVEL S</h2>
+    <p>Professional in tiles, stones, marble, and granite installation — backed by years of experience and a team dedicated to perfection in every detail.</p>
+
+    <p> 
+      With over 20 years of hands-on experience, we have earned the trust and positive feedback of every client through quality workmanship and dedicated service.
+    </p>
+
+    <ul class="owner-points">
+      <li>Expertise in all types of tile work — <strong>apartments, villas, homes, offices, and commercial buildings</strong>.</li>
+      <li>Delivering <strong>smooth finishes, perfect leveling, and seamless joints</strong> for every project.</li>
+      <li>We value <strong>timely completion</strong> with proper planning and professional supervision.</li>
+      <li>Use of high-quality materials and modern tools for <strong>durable, long-lasting results</strong>.</li>
+      <li>Dedicated team ensuring <strong>clean, beautiful, and elegant outcomes</strong> every time.</li>
+      <li>Focus on <strong>customer satisfaction</strong> — every client’s feedback matters, and we take pride in exceeding expectations.</li>
+    </ul>
+
+    <p class="dot">We handle all types of tile works including <strong>apartments, villas, homes, offices, showrooms, commercial buildings, and luxury spaces</strong>. Each project is carried out with precise measurements, smooth alignment, and elegant finishing touches that transform your interiors into premium art.</p>
+
+    <p class="dot">Our work reflects <strong>beauty, durability, and efficiency</strong> — from floor to ceiling, bathroom to balcony. We manage every project with effective planning, timely execution, and high-quality materials, ensuring long-lasting results that stay stunning for years.</p>
+
+    <p class="dot">We take pride in <strong>satisfying every customer</strong> with exceptional workmanship, clean finishing, and attention to detail. Whether it’s a small renovation or a large-scale building, our professional approach guarantees perfection and adds true beauty to your space.</p>
+
+ <p class="contact-line">
+  Phone:
+  <a href="tel:9845255973">9845255973</a> &nbsp; • &nbsp;
+  Email:
+  <a href="mailto:sakthivel19101975@gmail.com">sakthivel19101975@gmail.com</a>
+</p>
+
+
+  </div>
+</div>
+
+	
+
+    <div id="services" class="card">
+  <h3 style="margin:0 0 8px;color:#ffcc80;">Services </h3>
+
+      <div class="services-grid">
+        <div class="service">
+          <img src="images/vit1.jpg" alt="Vitrified 1200x600">
+          <h4>Vitrified Tiles Flooring</h4>
+          <small>1200mm × 600mm — Smooth, low-porosity, easy to maintain.</small>
+          <div class="price">₹35 / sft</div>
+        </div>
+        <div class="service">
+          <img src="images/vit2.jpg" alt="Vitrified 1600x800">
+          <h4>Vitrified Tiles Flooring</h4>
+          <small>1600mm × 800mm — Large-format, premium look for open living spaces.</small>
+          <div class="price">₹50 / sft</div>
+        </div>
+        <div class="service">
+          <img src="images/b1.jpg" alt="Bathroom Wall 1200x600">
+          <h4>Bathroom Wall Tiles (7 ft)</h4>
+          <small>1200mm × 600mm — Vertical panels that create height & elegance.</small>
+          <div class="price">₹40 / sft</div>
+        </div>
+        <div class="service">
+          <img src="images/b2.jpg" alt="Bathroom Wall Ceiling">
+          <h4>Bathroom Wall Tiles & Ceiling</h4>
+          <small>1200mm × 600mm — Seamless finish up to ceiling for modern bathrooms.</small>
+          <div class="price">₹45 / sft</div>
+        </div>
+        <div class="service">
+          <img src="images/c1.jpg" alt="Ceramic 18x12">
+          <h4>Ceramic Tiles Bathroom</h4>
+          <small>18×12 & 2×1 — Economical and stylish options for wet areas.</small>
+          <div class="price">₹35 / sft</div>
+        </div>
+        <div class="service">
+          <img src="images/v1.jpg" alt="Vitrified 2x2">
+          <h4>Vitrified Tiles (2×2)</h4>
+          <small>2×2 ft — Classic square tiles, durable and easy to lay out.</small>
+          <div class="price">₹30 / sft</div>
+        </div>
+        <div class="service">
+          <img src="images/ep.jpg" alt="Epoxy grout">
+          <h4>Epoxy Grout</h4>
+          <small>2mm & 3mm — High-strength, stain-resistant grout for a clean finish.</small>
+          <div class="price">₹10 / sft</div>
+        </div>
+      </div>
+    </div>
+
+  <div class="card assurance">
+  <h3 style="margin-top:0;color:#ffcc80;">Why Choose Us</h3>
+
+  <ul class="why-points">
+    <li>Our team treats every project as a signature job — crafted with precision, patience, and pride.</li>
+    <li>We measure precisely, prepare surfaces with care, and ensure perfect leveling for a seamless look.</li>
+    <li>Every joint and edge is finished with expert detailing that defines true craftsmanship.</li>
+    <li>We value <strong>quality, time, and customer satisfaction</strong> — every project is completed on schedule with durable, long-lasting results.</li>
+    <li>We work closely with clients to turn every vision into reality — from cozy homes to grand villas and commercial spaces.</li>
+    <li>Our mission : <strong>To make every floor shine and every wall speak luxury</strong>.</li>
+  </ul>
+
+  <p class="why-tagline">We make your floors smile!</p>
+  <p class="why-tagline">Where design meets durability!</p>
+</div>
+
+
+
+   <div id="gallery" class="card">
+  <h3 style="margin-top:0;color:#ffcc80;"> Gallery — Our Completed Projects</h3>
+      <div class="gallery" aria-live="polite">
+        <img src="images/sam.jpg" alt="living room flooring">
+        <img src="images/sam1.jpg" alt="marble kitchen">
+        <img src="images/sam2.jpg" alt="bathroom wall">
+        <img src="images/sam4.jpg" alt="outdoor stone">
+        <img src="images/sam5.jpg" alt="kitchen floor detail">
+        <img src="images/sam6.jpg" alt="grout and finish">
+        <img src="images/sam7.jpg" alt="vitrified closeup">
+        <img src="images/sam8.jpg" alt="large-format tile">
+        <img src="images/sam9.jpg" alt="ceramic bathroom">
+        <img src="images/sam10.jpg" alt="vitrified 2x2">
+        <img src="images/sam11.jpg" alt="staircase granite">
+        <img src="images/sam12.jpg" alt="polished marble">
+      </div>
+    </div>
+
+       <div class="cta card">
+  <h3 style="margin:0;color:var(--gold)">Ready to Transform Your Space?</h3>
+
+  <p style="color:var(--muted);margin:8px 0 12px">
+    Let’s bring beauty, precision, and luxury to your floors and walls. Whether it’s a new Apartment, Villa, Office, or Renovation project — We promise flawless finishing and timeless style. 
+  </p>
+  <p style="color:var(--muted);margin:8px 0 16px">
+    Schedule your free site visit today and experience <strong>Professional Tile work that transforms every space into Elegance</strong>.
+  </p>
+  <p class="cta-line">Flooring Dreams into Reality!</p>
+<p class="cta-line">Perfect tiles, Perfect finish – Guaranteed!</p>
+
+ 
+  <div style="display:flex;gap:12px;justify-content:center">
+  <!-- Contact button will directly call you -->
+  <a class="btn" href="tel:9845255973">📞 Contact Us</a>
+
+  <!-- WhatsApp Button (same gold color) -->
+  <a class="btn" 
+     href="https://wa.me/919845255973?text=Hello%20Sakthivel!%20I%20am%20interested%20in%20your%20tile%20work%20services."
+     target="_blank">💬 Message Us</a>
+</div>
+
+</div>
+
+</div>
+
+<div id="contact" class="footer">
+  <p><strong>Phone :</strong> <a href="tel:9845255973" style="color:#ffdd75;text-decoration:none">9845255973</a></p>
+  <p><strong>Email :</strong> <a href="mailto:sakthivel19101975@gmail.com" style="color:#ffdd75;text-decoration:none">sakthivel19101975@gmail.com</a></p>
+  <p><strong>Address :</strong> Bangalore, Karnataka</p>
+  <p>© 2025 SAKTHIVEL THE TILE CONTRACTOR — All Rights Reserved</p>
+  
+<p class="dev-line">
+  <span class="dev-by">Developed by</span><br>
+  <span class="dev-name">JAYASURYA-KSS</span>
+</p>
+
+   
+</div>
+
+</div>
+</div>
+
+</div>
+<script>
+function handleFadeIn() {
+  const fadeItems = document.querySelectorAll(".why-tagline, .cta-line");
+  fadeItems.forEach(item => {
+    const rect = item.getBoundingClientRect();
+    const visible = rect.top < window.innerHeight - 100 && rect.bottom > 50;
+
+    if (visible) {
+      item.classList.add("visible");
+    } else {
+      item.classList.remove("visible"); // allows fade again
+    }
+  });
+}
+
+document.addEventListener("scroll", handleFadeIn);
+window.addEventListener("load", handleFadeIn);
+</script>
+
+
+</body>
+</html>
